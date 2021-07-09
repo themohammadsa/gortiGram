@@ -20,7 +20,6 @@ import {
   headerSizeMobile,
   imageProfilePictureMobile,
 } from './styles/ProfileContentCard';
-import styles from './styles/profileHeader.module.css';
 
 export const ProfileHeaderMobile = () => {
   const { username } = useParams();
@@ -52,37 +51,39 @@ export const ProfileHeaderMobile = () => {
     <>
       {profile && (
         <Box>
-          <VStack className={styles.mobile} {...headerSizeMobile}>
-            <Flex alignSelf="flex-start">
-              <Image
-                {...imageProfilePictureMobile}
-                src={profile.profilePicture}
-                fallbackSrc="https://via.placeholder.com/125"
-              />
+          <VStack {...headerSizeMobile}>
+            <Box alignSelf="center" >
+              <Flex alignSelf="flex-start" mb="1rem">
+                <Image
+                  {...imageProfilePictureMobile}
+                  src={profile.profilePicture}
+                  fallbackSrc="https://via.placeholder.com/125"
+                />
+                <Box>
+                  <Heading mb="0.5rem">{profile.username}</Heading>
+                  {!showFollowButton ? (
+                    <EditProfile />
+                  ) : (
+                    <FollowButton username={username} profile={profile} />
+                  )}
+                </Box>
+              </Flex>
+
               <Box>
-                <Heading mb="0.5rem">{profile.username}</Heading>
-                {!showFollowButton ? (
-                  <EditProfile />
-                ) : (
-                  <FollowButton username={username} profile={profile} />
-                )}
+                <Text fontWeight="semibold"> {profile.name} </Text>
+
+                <Text>{profile.bio}</Text>
+                <Link
+                  fontWeight="semibold"
+                  color="blue.600"
+                  href={profile.website}
+                  isExternal
+                >
+                  {profile.website}
+                </Link>
               </Box>
-            </Flex>
-
-            <Box>
-              <Text fontWeight="semibold"> {profile.name} </Text>
-
-              <Text>{profile.bio}</Text>
-              <Link
-                fontWeight="semibold"
-                color="blue.600"
-                href={profile.website}
-                isExternal
-              >
-                {profile.website}
-              </Link>
             </Box>
-            <Center mb="10" d="flex" justifyContent="space-around">
+            <Center mb="10" d="flex" justifyContent="space-around" width="100%">
               <Text fontWeight="semibold">{profilePosts?.length} posts</Text>
               <Box>
                 <FollowersModal profile={profile} />

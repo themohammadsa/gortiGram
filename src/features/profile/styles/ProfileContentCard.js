@@ -8,7 +8,7 @@ export const imageProfilePicture = {
   boxSize: '125px',
   alignSelf: 'flex-start',
   objectFit: 'cover',
-  ml: '5rem',
+  ml: ['5rem', '1rem', '5rem', '5rem', '10rem'],
 };
 
 export const imageProfilePictureMobile = {
@@ -19,9 +19,10 @@ export const imageProfilePictureMobile = {
 };
 
 export const headerSize = {
-  width: ['95%', '90%'],
+  width: ['100%', '100%', '90%'],
   spacing: ['0rem', '5rem'],
-  mt: '3rem',
+  m: 'auto',
+  pt: '3rem',
   pb: '3rem',
   borderBottom: '2px',
   borderColor: 'gray.100',
@@ -30,7 +31,7 @@ export const headerSize = {
 export const headerSizeMobile = {
   width: ['95%', '90%'],
   m: 'auto',
-  mt: '2rem',
+  pt: '2.5rem',
   pb: '2rem',
   borderBottom: '2px',
   borderColor: 'gray.100',

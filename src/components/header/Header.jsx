@@ -12,7 +12,6 @@ import {
   MenuGroup,
   MenuDivider,
 } from '@chakra-ui/react';
-import styles from './styles/header.module.css';
 import logotext from '../../assets/logotext.png';
 import { useNavigate } from 'react-router-dom';
 import { FaUserAlt } from 'react-icons/fa';
@@ -59,16 +58,20 @@ export const Header = () => {
             />
           </Box>
           <Spacer />
-          <Box mt="1.5" className={styles.desktop}>
+          <Box mt="1.5" className="desktop">
             <SearchBar />
           </Box>
           <Spacer />
-          <UploadPost />
-          <Icon
-            as={AiFillHome}
-            {...iconNotificationSize}
-            onClick={() => navigate('/')}
-          />
+          {token && (
+            <Box>
+              <UploadPost />
+              <Icon
+                as={AiFillHome}
+                {...iconNotificationSize}
+                onClick={() => navigate('/')}
+              />
+            </Box>
+          )}
 
           <Menu>
             <MenuButton>
@@ -91,7 +94,7 @@ export const Header = () => {
             )}
           </Menu>
         </Flex>
-        <Box m="2.5" className={styles.mobile}>
+        <Box m="2.5" className="mobile">
           <SearchBar />
         </Box>
       </Box>

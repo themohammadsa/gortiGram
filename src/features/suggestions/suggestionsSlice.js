@@ -7,7 +7,6 @@ const API_URL = 'https://gortigram.themohammadsa.repl.co/profile';
 export const getSuggestions = createAsyncThunk('/getSuggestions', async () => {
   try {
     const response = await axios.get(`${API_URL}/getSuggestions`);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     return errorHandler(error);

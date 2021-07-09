@@ -45,7 +45,7 @@ export const ProfileHeader = () => {
             fallbackSrc="https://via.placeholder.com/125"
           />
 
-          <Box width="50%">
+          <Box width={['75%', '75%', '50%']}>
             <Box d="flex" mb="4">
               <Heading mr="10">{profile.username}</Heading>
 

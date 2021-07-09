@@ -1,4 +1,4 @@
-import styles from './styles/home.module.css';
+import '../../App.css';
 import { Box, Flex, Spacer } from '@chakra-ui/react';
 import { Posts } from '../../features/posts/Posts';
 import { Suggestions } from '../../features/suggestions/Suggestions';
@@ -6,7 +6,7 @@ import { Suggestions } from '../../features/suggestions/Suggestions';
 export const Home = () => {
   return (
     <>
-      <Box width="97%" className={styles.mobile}>
+      <Box width="97%" className="mobile">
         <Suggestions />
       </Box>
       <Flex mt="3rem">
@@ -14,10 +14,7 @@ export const Home = () => {
           <Posts />
         </Box>
         <Spacer />
-        <Box
-          width={['40%', '40%', '40%', '40%', '27%']}
-          className={styles.desktop}
-        >
+        <Box width={['40%', '40%', '40%', '40%', '27%']} className="desktop">
           <Suggestions />
         </Box>
       </Flex>
