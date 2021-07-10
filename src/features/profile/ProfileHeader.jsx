@@ -76,7 +76,7 @@ export const ProfileHeader = () => {
               <Link
                 fontWeight="semibold"
                 color="blue.600"
-                href={profile.website}
+                href={`https://${profile.website}`}
                 isExternal
               >
                 {profile.website}
