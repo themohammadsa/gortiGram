@@ -90,7 +90,7 @@ const authSlice = createSlice({
       }
     },
     [createUser.rejected]: (state) => {
-      state.createUserStatus = 'rejected';
+      state.createUserStatus = 'error';
       state.errorMessage = 'Data is missing!';
     },
     [loginUser.pending]: (state) => {

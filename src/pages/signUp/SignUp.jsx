@@ -41,7 +41,6 @@ export const SignUp = () => {
   };
 
   const clickHandler = async () => {
-    setLoader(true);
     setError('');
     signUpValidation();
 
@@ -53,20 +52,22 @@ export const SignUp = () => {
 
     if (checkInput) {
       dispatch(createUser({ name, email, password, username }));
+      setLoader(true);
     }
   };
 
   useEffect(() => {
     if (createUserStatus === 'fulfilled') {
-      setLoader(false);
       toast({
         title: `SignUp Succesful!`,
         status: 'success',
         isClosable: true,
       });
+      setLoader(false);
       navigate('/login');
-    } else {
+    } else if (createUserStatus === 'error') {
       setError(errorMessage);
+      setLoader(false);
     }
   }, [errorMessage, createUserStatus, navigate, toast]);
 

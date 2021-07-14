@@ -77,6 +77,21 @@ export const postComment = createAsyncThunk(
   }
 );
 
+export const deletePost = createAsyncThunk(
+  'posts/deletePost',
+  async ({ postId }) => {
+    try {
+      const response = await axios.post(`${API_URL}/deletePost`, {
+        postId,
+      });
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return errorHandler(error);
+    }
+  }
+);
+
 const postSlice = createSlice({
   name: 'posts',
   initialState: {
@@ -84,6 +99,7 @@ const postSlice = createSlice({
     status: 'idle',
     postCommentStatus: 'idle',
     likePostStatus: 'idle',
+    deletePostStatus: 'idle',
   },
   reducers: {},
   extraReducers: {
@@ -111,6 +127,12 @@ const postSlice = createSlice({
     },
     [dislikePost.fulfilled]: (state) => {
       state.likePostStatus = 'fulfilled';
+    },
+    [deletePost.pending]: (state) => {
+      state.deletePostStatus = 'pending';
+    },
+    [deletePost.fulfilled]: (state) => {
+      state.deletePostStatus = 'fulfilled';
     },
   },
 });

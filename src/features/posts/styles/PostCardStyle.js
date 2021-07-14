@@ -6,6 +6,13 @@ export const imageProfile = {
   fallbackSrc: 'https://via.placeholder.com/35',
 };
 
+export const iconSize = {
+  w: ['4', '5'],
+  h: ['4', '5'],
+  mb: '0.5',
+  color: 'blue.600',
+};
+
 export const buttonLink = {
   variant: 'link',
   colorScheme: 'black',
