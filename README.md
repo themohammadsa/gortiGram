@@ -2,7 +2,7 @@
 # gortiGram: a social media app where photos talk
 
 ## Description 
-This is a full-stack social-media application having all the core functionalities of a social-media application. You can upload posts, delete posts, add comments, view profiles, follow, unfollow and a lot much more! 
+This is a full-stack social-media application having all the core functionalities of a social-media application. You can upload posts, delete posts, add comments, view profiles, follow, unfollow and a lot much more!   
 This is the fifth project out of five projects created by learning from [@neogcamp](https://neog.camp/) for [@roc8](https://www.roc8.careers/).
 
 Here's the link for the live demo:
