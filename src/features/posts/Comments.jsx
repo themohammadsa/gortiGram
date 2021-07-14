@@ -17,7 +17,7 @@ export const Comments = ({ post }) => {
             color="gray.400"
             onClick={() => setViewComments(!viewComments)}
           >
-            View all {totalComments} comments
+            {!viewComments ? 'View' : 'Hide'} all {totalComments} comments
           </Button>
         )}
         <Box>

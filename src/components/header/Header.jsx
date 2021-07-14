@@ -58,9 +58,11 @@ export const Header = () => {
             />
           </Box>
           <Spacer />
-          <Box mt="1.5" className="desktop">
-            <SearchBar />
-          </Box>
+          {token && (
+            <Box mt="1.5" className="desktop">
+              <SearchBar />
+            </Box>
+          )}
           <Spacer />
           {token && (
             <Box>
@@ -94,9 +96,11 @@ export const Header = () => {
             )}
           </Menu>
         </Flex>
-        <Box m="2.5" className="mobile">
-          <SearchBar />
-        </Box>
+        {token && (
+          <Box m="2.5" className="mobile">
+            <SearchBar />
+          </Box>
+        )}
       </Box>
     </>
   );
