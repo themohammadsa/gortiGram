@@ -5,12 +5,15 @@
 This is a full-stack social-media application having all the core functionalities of a social-media application. You can upload posts, delete posts, add comments, view profiles, follow, unfollow and a lot much more!   
 This is the fifth project out of five projects created by learning from [@neogcamp](https://neog.camp/) for [@roc8](https://www.roc8.careers/).
 
-Here's the link for the live demo:
-- [Live Demo](https://gortigram.netlify.app/)
-
 ## Preview 
 
 ![demo](/demo.gif)
+
+## Links
+
+- [Live Demo](https://gortigram.netlify.app/)
+- [Front-End Repo](https://github.com/themohammadsa/gortiGram)
+- [Back-End Repo](https://github.com/themohammadsa/gortiGram-backend)
 
 ## Features
 
