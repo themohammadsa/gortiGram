@@ -46,6 +46,25 @@ This is the fifth project out of five projects created by learning from [@neogca
 - jwt Authentication 
 - Cloudinary (for storing images)
 
+
+
+## Getting Started
+### Dependencies
+You will need `node` and `npm` installed globally in your machine.
+
+### Installation
+1. Clone the repo  
+```git clone https://github.com/themohammadsa/gortiGram.git```
+2. Install the npm packages  
+```npm install```
+
+### Usage
+1. To start the server  
+```npm start```
+2. To visit the website, go to  
+```localhost:3000```
+
+
 ## Contact
 
 - Github: [@themohammadsa](https://github.com/themohammadsa)
