@@ -17,7 +17,7 @@ import {
   FormControl,
   useToast,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { postProfile } from './profileSlice';
 import { buttonPost, errorText, buttonUpload } from './styles/EditProfileCard';
@@ -84,6 +84,11 @@ export const EditProfile = () => {
     });
   };
 
+  useEffect(() => {
+    setBio(profile.bio);
+    setWebsite(profile.website);
+  }, []);
+
   return (
     <>
       <Button onClick={onOpen}>Edit Profile</Button>
@@ -99,7 +104,7 @@ export const EditProfile = () => {
               <Input
                 type="text"
                 placeholder="Enter your bio"
-                value={profile.bio}
+                value={bio}
                 mb="3"
                 height="3rem"
                 onChange={(event) => setBio(event.target.value)}
@@ -110,7 +115,7 @@ export const EditProfile = () => {
               <Input
                 type="text"
                 placeholder="Enter your website"
-                value={profile.website}
+                value={website}
                 mb="3"
                 height="3rem"
                 onChange={(event) => setWebsite(event.target.value)}
