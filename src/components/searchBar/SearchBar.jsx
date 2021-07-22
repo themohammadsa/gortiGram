@@ -44,6 +44,7 @@ export const SearchBar = () => {
 
   const clearHandler = () => {
     dispatch(clearSearch());
+    setSearchValue('');
   };
 
   useEffect(() => {
@@ -63,6 +64,7 @@ export const SearchBar = () => {
         <Input
           pr={'4.5rem'}
           type="text"
+          value={searchValue}
           focusBorderColor="blue.600"
           placeholder="Search for users"
           onChange={(event) => setSearchValue(event.target.value)}
