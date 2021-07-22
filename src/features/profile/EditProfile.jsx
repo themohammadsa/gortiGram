@@ -35,6 +35,7 @@ export const EditProfile = () => {
 
   const dispatch = useDispatch();
   const username = useSelector((state) => state.auth.username);
+  const profile = useSelector((state) => state.profile.profile);
   const toast = useToast();
 
   const uploadHandler = (event) => {
@@ -98,6 +99,7 @@ export const EditProfile = () => {
               <Input
                 type="text"
                 placeholder="Enter your bio"
+                value={profile.bio}
                 mb="3"
                 height="3rem"
                 onChange={(event) => setBio(event.target.value)}
@@ -108,17 +110,19 @@ export const EditProfile = () => {
               <Input
                 type="text"
                 placeholder="Enter your website"
+                value={profile.website}
                 mb="3"
                 height="3rem"
                 onChange={(event) => setWebsite(event.target.value)}
               />
             </FormControl>
-            {image && (
+            {(image || profile.profilePicture) && (
               <Box>
                 <Text fontWeight="semibold">Profile Picture</Text>
                 <Center>
                   <Image
                     src={preview}
+                    fallbackSrc={profile.profilePicture}
                     mt="5"
                     objectFit="cover"
                     borderRadius="50%"
