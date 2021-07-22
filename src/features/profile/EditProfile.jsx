@@ -87,7 +87,7 @@ export const EditProfile = () => {
   useEffect(() => {
     setBio(profile.bio);
     setWebsite(profile.website);
-  }, []);
+  }, [profile.bio, profile.website]);
 
   return (
     <>
