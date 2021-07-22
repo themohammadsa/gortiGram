@@ -20,18 +20,20 @@ export const Comments = ({ post }) => {
             {!viewComments ? 'View' : 'Hide'} all {totalComments} comments
           </Button>
         )}
-        <Box>
-          <Button
-            {...buttonLink}
-            mr="0.5rem"
-            onClick={() => navigate(`/profile/${post.comments[0].username}`)}
-          >
-            {post.comments[0]?.username}
-          </Button>
-          <Text style={{ display: 'inline-block' }}>
-            {post.comments[0]?.comment}
-          </Text>
-        </Box>
+        {!viewComments && (
+          <Box>
+            <Button
+              {...buttonLink}
+              mr="0.5rem"
+              onClick={() => navigate(`/profile/${post.comments[0].username}`)}
+            >
+              {post.comments[0]?.username}
+            </Button>
+            <Text style={{ display: 'inline-block' }}>
+              {post.comments[0]?.comment}
+            </Text>
+          </Box>
+        )}
 
         {viewComments &&
           post.comments.map((comment, index) => {
