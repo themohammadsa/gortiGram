@@ -7,9 +7,15 @@ import { Box } from '@chakra-ui/react';
 function App() {
   return (
     <div className="App">
-      <Box width={['100%', '100%', '100%', '70%']} m="auto" className="header">
-        <Header />
-      </Box>
+      <div className="border">
+        <Box
+          width={['100%', '100%', '100%', '70%']}
+          m="auto"
+          className="header"
+        >
+          <Header />
+        </Box>
+      </div>
       <Box width={['95%', '95%', '90%', '70%']} m="auto">
         <Router />
       </Box>

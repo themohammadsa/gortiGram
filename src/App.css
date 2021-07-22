@@ -1,5 +1,13 @@
-.App {
+.border {
   border-top: 4px solid #2b6cb0;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
+  padding-bottom: 0.5rem;
 }
 
 .mobile {
@@ -22,17 +30,10 @@
 
 @media only screen and (max-width: 800px) {
   .header {
-    padding: 0rem 0.5rem 0.2rem 0.5rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 10px;
-    position: sticky;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: white;
-    z-index: 10;
-    border-top: 4px solid #2b6cb0;
+    padding: 0rem 0.5rem;
   }
-  .App {
-    border: 0;
+  .border {
+    padding-bottom: 0.2rem;
+    margin-bottom: 1rem;
   }
 }
