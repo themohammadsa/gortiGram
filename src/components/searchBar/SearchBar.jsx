@@ -39,6 +39,7 @@ export const SearchBar = () => {
       dispatch(searchUser({ searchValue }));
       setLoader(true);
       onOpen();
+      setSearchValue('');
     }
   };
 
