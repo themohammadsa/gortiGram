@@ -91,7 +91,7 @@ export const SearchBar = () => {
               result.map((user, index) => {
                 return (
                   <div key={index}>
-                    <Box d="flex">
+                    <Box d="flex" mb="1.5rem">
                       <Image {...imageProfile} src={user.profilePicture} />
                       <Button
                         {...buttonLink}

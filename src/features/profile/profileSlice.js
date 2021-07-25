@@ -80,7 +80,6 @@ export const unFollowUser = createAsyncThunk(
 export const searchUser = createAsyncThunk(
   '/searchUser',
   async ({ searchValue }) => {
-    console.log('inside');
     try {
       const response = await axios.post(`${API_URL}/searchUser`, {
         searchValue,
@@ -148,7 +147,8 @@ const profileSlice = createSlice({
       state.searchUserStatus = 'pending';
     },
     [searchUser.fulfilled]: (state, { payload }) => {
-      state.searchUser = payload.searchData;
+      state.searchUser = payload.searchResult;
+      console.log('state search', state.searchUser);
       state.searchUserStatus = 'fulfilled';
     },
   },
