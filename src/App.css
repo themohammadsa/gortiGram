@@ -1,0 +1,39 @@
+.border {
+  border-top: 4px solid #2b6cb0;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
+  padding-bottom: 0.5rem;
+}
+
+.mobile {
+  display: block !important;
+}
+
+.desktop {
+  display: none !important;
+}
+
+@media only screen and (min-width: 700px) {
+  .mobile {
+    display: none !important;
+  }
+
+  .desktop {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .header {
+    padding: 0rem 0.5rem;
+  }
+  .border {
+    padding-bottom: 0.2rem;
+    margin-bottom: 1rem;
+  }
+}
